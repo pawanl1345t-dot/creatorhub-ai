@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CreatorHub AI - Viral Script & Creator Studio</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;font-family:system-ui,-apple-system,sans-serif}
+body{background:#0b0f19;color:#f1f5f9;line-height:1.6;padding:16px}
+.wrap{max-width:720px;margin:0 auto}
+header{text-align:center;padding:20px 0 24px}
+.badge{display:inline-block;background:rgba(99,102,241,0.18);color:#818cf8;padding:4px 12px;border-radius:99px;font-size:12px;font-weight:600;margin-bottom:8px;border:1px solid rgba(99,102,241,0.35)}
+h1{font-size:26px;font-weight:800;background:linear-gradient(90deg,#38bdf8,#818cf8,#f472b6);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.sub{color:#94a3b8;font-size:14px;margin-top:4px}
+.card{background:#131a2a;border:1px solid #1e293b;border-radius:16px;padding:18px;margin-bottom:18px;box-shadow:0 10px 25px rgba(0,0,0,0.3)}
+label{display:block;font-size:13px;font-weight:600;color:#cbd5e1;margin-bottom:6px}
+input,select{width:100%;padding:12px 14px;border-radius:10px;border:1px solid #334155;background:#0f172a;color:#fff;font-size:15px;margin-bottom:14px;outline:none}
+input:focus,select:focus{border-color:#6366f1}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
+@media(max-width:560px){.grid3{grid-template-columns:1fr}}
+.btn-main{width:100%;padding:14px;border:none;border-radius:12px;background:linear-gradient(90deg,#4f46e5,#7c3aed);color:#fff;font-size:16px;font-weight:700;cursor:pointer;transition:0.2s}
+.btn-main:active{transform:scale(0.98)}
+.out-box{display:none;margin-top:16px}
+.script-area{background:#090d16;border:1px solid #283548;border-radius:12px;padding:16px;white-space:pre-wrap;font-size:14.5px;color:#e2e8f0;max-height:420px;overflow-y:auto}
+.actions{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:12px}
+@media(max-width:520px){.actions{grid-template-columns:1fr 1fr}}
+.act-btn{padding:10px 8px;border-radius:10px;border:1px solid #334155;background:#1e293b;color:#f8fafc;font-size:13px;font-weight:600;cursor:pointer;text-align:center}
+.act-wa{background:#15803d;border-color:#16a34a}
+.ad-slot{background:repeating-linear-gradient(45deg,#111827,#111827 10px,#161f33 10px,#161f33 20px);border:1px dashed #334155;border-radius:12px;padding:14px;text-align:center;color:#64748b;font-size:12px;margin-bottom:18px}
+.store-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.store-head h2{font-size:17px;color:#f8fafc}
+.store-tag{font-size:11px;background:#1e293b;color:#38bdf8;padding:3px 8px;border-radius:6px}
+.prod-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+@media(max-width:600px){.prod-grid{grid-template-columns:1fr}}
+.prod{background:#0f172a;border:1px solid #1e293b;border-radius:12px;padding:14px;display:flex;flex-direction:column;justify-content:space-between}
+.prod h3{font-size:14px;color:#f1f5f9;margin-bottom:4px}
+.prod p{font-size:12px;color:#94a3b8;margin-bottom:10px}
+.shop-btns{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.s-btn{text-decoration:none;text-align:center;padding:8px 6px;border-radius:8px;font-size:12px;font-weight:700}
+.amz{background:#f59e0b;color:#0f172a}
+.flp{background:#2563eb;color:#ffffff}
+footer{text-align:center;padding:20px 0 30px;border-top:1px solid #1e293b;margin-top:24px;color:#64748b;font-size:12.5px}
+.f-links{display:flex;justify-content:center;flex-wrap:wrap;gap:14px;margin-bottom:10px}
+.f-links span{color:#94a3b8;cursor:pointer;text-decoration:underline}
+.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.78);z-index:99;padding:20px;align-items:center;justify-content:center}
+.modal-card{background:#131a2a;border:1px solid #334155;border-radius:16px;max-width:520px;width:100%;padding:20px;max-height:80vh;overflow-y:auto}
+.modal-card h3{font-size:18px;margin-bottom:10px;color:#38bdf8}
+.modal-card p{font-size:13.5px;color:#cbd5e1;margin-bottom:12px}
+.close-m{background:#ef4444;color:#fff;border:none;padding:8px 16px;border-radius:8px;font-weight:600;cursor:pointer;float:right}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="badge">✨ AI Powered Creator Tool</div>
+    <h1>CreatorHub AI Studio</h1>
+    <p class="sub">Instagram Reels और YouTube Shorts के लिए सेकंडों में वायरल स्क्रिप्ट बनाएं</p>
+  </header>
+
+  <div class="ad-slot">📢 Advertisement Space (Google AdSense Ready Banner)</div>
+
+  <div class="card">
+    <label>आपका वीडियो टॉपिक क्या है? (उदा. सुबह जल्दी उठने के फायदे, Free Fire Tips)</label>
+    <input type="text" id="topic" placeholder="यहाँ अपना टॉपिक लिखें...">
+    <div class="grid3">
+      <div>
+        <label>प्लेटफ़ॉर्म</label>
+        <select id="platform">
+          <option value="Instagram Reels">Instagram Reels</option>
+          <option value="YouTube Shorts">YouTube Shorts</option>
+          <option value="Facebook Video">Facebook Video</option>
+        </select>
+      </div>
+      <div>
+        <label>अंदाज़ (Tone)</label>
+        <select id="tone">
+          <option value="Viral & High-Retention">Viral & Hooky 🔥</option>
+          <option value="Motivational & Inspiring">Motivational 💪</option>
+          <option value="Funny & Entertaining">Comedy / Funny 😂</option>
+          <option value="Educational & Clear">Informative 🧠</option>
+        </select>
+      </div>
+      <div>
+        <label>वीडियो की लंबाई</label>
+        <select id="duration">
+          <option value="15 Seconds Short">15 सेकंड</option>
+          <option value="30 Seconds Medium" selected>30 सेकंड</option>
+          <option value="60 Seconds Detailed">60 सेकंड</option>
+        </select>
+      </div>
+    </div>
+    <button class="btn-main" id="genBtn">Generate Viral Script 🚀</button>
+
+    <div class="out-box" id="outBox">
+      <div class="script-area" id="scriptText"></div>
+      <div class="actions">
+        <button class="act-btn" id="copyBtn">Copy 📋</button>
+        <button class="act-btn act-wa" id="waBtn">WhatsApp 📲</button>
+        <button class="act-btn" id="dlBtn">Save .txt ⬇️</button>
+        <button class="act-btn" id="reBtn">New Script 🔄</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="store-head">
+      <h2>🛍️ Smart Creator Store</h2>
+      <span class="store-tag" id="storeCat">Creator Essentials</span>
+    </div>
+    <div class="prod-grid" id="prodGrid"></div>
+  </div>
+
+  <footer>
+    <div class="f-links">
+      <span data-m="about">About Us</span>
+      <span data-m="privacy">Privacy Policy</span>
+      <span data-m="affiliate">Affiliate Disclosure</span>
+      <span data-m="contact">Contact Us</span>
+    </div>
+    <p>© 2026 CreatorHub AI Studio. Made for Indian Content Creators.</p>
+  </footer>
+</div>
+
+<div class="modal" id="infoModal">
+  <div class="modal-card">
+    <button class="close-m" id="closeModal">बंद करें ✕</button>
+    <h3 id="mTitle"></h3>
+    <p id="mBody"></p>
+  </div>
+</div>
+
+<script>
+const AMAZON_TAG = "creatorhub-21";
+let currentScript = "";
+
+const CATALOG = {
+  gaming: {
+    label: "Gaming & Mobile Gear",
+    items: [
+      {title:"Pro Gaming Finger Sleeves", desc:"फास्ट ड्रैग और स्मूद टच कंट्रोल के लिए", query:"gaming finger sleeves mobile"},
+      {title:"Mobile Cooling Fan", desc:"लंबे गेमिंग सेशन में फ़ोन गर्म होने से बचाएं", query:"mobile gaming cooler fan"},
+      {title:"Low-Latency Gaming Earphones", desc:"साफ़ फुटस्टेप्स और क्रिस्टल वॉइस चैट", query:"wired gaming earphones with mic"}
+    ]
+  },
+  fitness: {
+    label: "Health & Sports Picks",
+    items: [
+      {title:"Insulated Steel Flask", desc:"चाय या पानी घंटों तक गर्म/ठंडा रखें", query:"stainless steel vacuum flask 1 litre"},
+      {title:"Sports & Cricket Accessories", desc:"प्रैक्टिस और फिटनेस के लिए बेस्ट गियर", query:"cricket practice kit training"},
+      {title:"Smart Fitness Band", desc:"नींद, कदम और डेली रूटीन ट्रैक करें", query:"smart fitness band watch"}
+    ]
+  },
+  tech: {
+    label: "Tech & Study Setup",
+    items: [
+      {title:"Foldable Mobile & Tablet Stand", desc:"वीडियो देखने और रिकॉर्डिंग के लिए मजबूत स्टैंड", query:"metal mobile stand desk"},
+      {title:"Fast GaN Charger & Cable", desc:"सुपरफ़ास्ट और सुरक्षित चार्जिंग", query:"fast charger type c"},
+      {title:"Wireless Bluetooth Neckband", desc:"लंबी बैटरी लाइफ और क्लियर कॉलिंग", query:"wireless neckband earphones"}
+    ]
+  },
+  creator: {
+    label: "Creator Starter Kit",
+    items: [
+      {title:"Wireless Collar Mic (Type-C)", desc:"बिना शोर के स्टूडियो जैसी आवाज़ रिकॉर्ड करें", query:"wireless collar mic for youtube"},
+      {title:"10-Inch LED Ring Light + Stand", desc:"रील्स और शॉर्ट्स के लिए प्रोफेशनल लाइटिंग", query:"ring light with tripod stand"},
+      {title:"Flexible Gorilla Tripod", desc:"कहीं भी आसानी से मोबाइल सेट करके शूट करें", query:"gorilla tripod for mobile"}
+    ]
+  }
+};
+
+function updateStore(topicText) {
+  const t = (topicText || "").toLowerCase();
+  let pack = CATALOG.creator;
+  if (/game|free fire|bgmi|pubg|headshot|gaming/.test(t)) pack = CATALOG.gaming;
+  else if (/cricket|bat|gym|fitness|health|chai|tea|morning|run/.test(t)) pack = CATALOG.fitness;
+  else if (/mobile|phone|tech|laptop|app|study|earn|money/.test(t)) pack = CATALOG.tech;
+
+  document.getElementById("storeCat").textContent = pack.label;
+  const grid = document.getElementById("prodGrid");
+  grid.innerHTML = pack.items.map(item => {
+    const amzUrl = "https://www.amazon.in/s?k=" + encodeURIComponent(item.query) + "&tag=" + AMAZON_TAG;
+    const flpUrl = "https://www.flipkart.com/search?q=" + encodeURIComponent(item.query);
+    return `<div class="prod">
+      <div><h3>${item.title}</h3><p>${item.desc}</p></div>
+      <div class="shop-btns">
+        <a class="s-btn amz" href="${amzUrl}" target="_blank" rel="nofollow noopener">Amazon 🛒</a>
+        <a class="s-btn flp" href="${flpUrl}" target="_blank" rel="nofollow noopener">Flipkart 🛍️</a>
+      </div>
+    </div>`;
+  }).join("");
+}
+
+async function generateScript() {
+  const topic = document.getElementById("topic").value.trim();
+  const platform = document.getElementById("platform").value;
+  const tone = document.getElementById("tone").value;
+  const duration = document.getElementById("duration").value;
+  if (!topic) { alert("कृपया पहले कोई टॉपिक लिखें!"); return; }
+
+  updateStore(topic);
+  const btn = document.getElementById("genBtn");
+  btn.textContent = "AI स्क्रिप्ट लिख रहा है... ⏳";
+  btn.disabled = true;
+
+  try {
+    const res = await fetch("/api/generate", {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({ topic, platform, tone: tone + " (" + duration + ")" })
+    });
+    const data = await res.json();
+    currentScript = data.result || "स्क्रिप्ट तैयार नहीं हो सकी।";
+    document.getElementById("scriptText").textContent = currentScript;
+    document.getElementById("outBox").style.display = "block";
+  } catch (e) {
+    alert("सर्वर से कनेक्ट नहीं हो पाया।");
+  } finally {
+    btn.textContent = "Generate Viral Script 🚀";
+    btn.disabled = false;
+  }
+}
+
+document.getElementById("genBtn").addEventListener("click", generateScript);
+document.getElementById("reBtn").addEventListener("click", generateScript);
+
+document.getElementById("copyBtn").addEventListener("click", () => {
+  navigator.clipboard.writeText(currentScript);
+  document.getElementById("copyBtn").textContent = "Copied! ✅";
+  setTimeout(() => document.getElementById("copyBtn").textContent = "Copy 📋", 1800);
+});
+
+document.getElementById("waBtn").addEventListener("click", () => {
+  const shareTxt = currentScript + "\n\n✨ फ्री में वायरल स्क्रिप्ट बनाएं: " + window.location.href;
+  window.open("https://api.whatsapp.com/send?text=" + encodeURIComponent(shareTxt), "_blank");
+});
+
+document.getElementById("dlBtn").addEventListener("click", () => {
+  const blob = new Blob([currentScript], {type: "text/plain;charset=utf-8"});
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = "viral-script.txt";
+  a.click();
+});
+
+const LEGAL = {
+  about: ["About CreatorHub AI", "CreatorHub AI Studio भारतीय कंटेंट क्रिएटर्स के लिए बनाया गया एक स्मार्ट AI टूल है, जो Instagram Reels, YouTube Shorts और Facebook के लिए हाई-रिटेंशन स्क्रिप्ट तैयार करने में मदद करता है।"],
+  privacy: ["Privacy Policy", "हम आपकी गोपनीयता का सम्मान करते हैं। इस वेबसाइट पर डाले गए टॉपिक केवल तुरंत AI स्क्रिप्ट बनाने के लिए उपयोग होते हैं और हम आपका कोई भी निजी डेटा या पासवर्ड सेव नहीं करते। तृतीय-पक्ष विज्ञापन (जैसे Google AdSense) कुकीज़ का उपयोग कर सकते हैं।"],
+  affiliate: ["Affiliate Disclosure", "इस वेबसाइट पर दिए गए कुछ प्रोडक्ट लिंक्स Amazon Associates और Flipkart Affiliate प्रोग्राम से जुड़े हो सकते हैं। जब आप इन लिंक्स से खरीदारी करते हैं, तो आपको कोई अतिरिक्त शुल्क नहीं देना होता, लेकिन हमें छोटा कमीशन मिल सकता है जिससे यह टूल फ्री रहता है।"],
+  contact: ["Contact Us", "किसी भी सुझाव, बिज़नेस पूछताछ या सहायता के लिए आप हमें ईमेल कर सकते हैं: support@creatorhub-ai.in"]
+};
+
+document.querySelectorAll(".f-links span").forEach(el => {
+  el.addEventListener("click", () => {
+    const info = LEGAL[el.getAttribute("data-m")];
+    document.getElementById("mTitle").textContent = info[0];
+    document.getElementById("mBody").textContent = info[1];
+    document.getElementById("infoModal").style.display = "flex";
+  });
+});
+
+document.getElementById("closeModal").addEventListener("click", () => {
+  document.getElementById("infoModal").style.display = "none";
+});
+
+updateStore("");
+</script>
+</body>
+</html>
