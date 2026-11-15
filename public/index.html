@@ -169,25 +169,32 @@ const CATALOG = {
 };
 
 function updateStore(topicText) {
-  const t = (topicText || "").toLowerCase();
-  let pack = CATALOG.creator;
-  if (/game|free fire|bgmi|pubg|headshot|gaming/.test(t)) pack = CATALOG.gaming;
-  else if (/cricket|bat|gym|fitness|health|chai|tea|morning|run/.test(t)) pack = CATALOG.fitness;
-  else if (/mobile|phone|tech|laptop|app|study|earn|money/.test(t)) pack = CATALOG.tech;
-
-  document.getElementById("storeCat").textContent = pack.label;
-  const grid = document.getElementById("prodGrid");
-  grid.innerHTML = pack.items.map(item => {
-    const amzUrl = "https://www.amazon.in/s?k=" + encodeURIComponent(item.query) + "&tag=" + AMAZON_TAG;
-    const flpUrl = "https://www.flipkart.com/search?q=" + encodeURIComponent(item.query);
-    return `<div class="prod">
+  const clean = (topicText || "").trim();
+  if (!clean) {
+    const pack = CATALOG.creator;
+    document.getElementById("storeCat").textContent = pack.label;
+    document.getElementById("prodGrid").innerHTML = pack.items.map(item => `<div class="prod">
       <div><h3>${item.title}</h3><p>${item.desc}</p></div>
       <div class="shop-btns">
-        <a class="s-btn amz" href="${amzUrl}" target="_blank" rel="nofollow noopener">Amazon 🛒</a>
-        <a class="s-btn flp" href="${flpUrl}" target="_blank" rel="nofollow noopener">Flipkart 🛍️</a>
+        <a class="s-btn amz" href="https://www.amazon.in/s?k=${encodeURIComponent(item.query)}&tag=${AMAZON_TAG}" target="_blank" rel="nofollow noopener">Amazon 🛒</a>
+        <a class="s-btn flp" href="https://www.flipkart.com/search?q=${encodeURIComponent(item.query)}" target="_blank" rel="nofollow noopener">Flipkart 🛍️</a>
       </div>
-    </div>`;
-  }).join("");
+    </div>`).join("");
+    return;
+  }
+  document.getElementById("storeCat").textContent = "🔍 " + clean;
+  const items = [
+    {title: clean + " - Best Sellers", desc: "सबसे ज़्यादा बिकने वाले और टॉप रेटेड विकल्प", query: clean + " best seller"},
+    {title: clean + " - Budget Deals", desc: "किफ़ायती दाम और बेस्ट ऑफर्स देखें", query: clean + " under budget"},
+    {title: clean + " - Trending Collection", desc: "नया और ट्रेंडिंग कलेक्शन सीधे स्टोर पर", query: clean + " latest"}
+  ];
+  document.getElementById("prodGrid").innerHTML = items.map(item => `<div class="prod">
+    <div><h3>${item.title}</h3><p>${item.desc}</p></div>
+    <div class="shop-btns">
+      <a class="s-btn amz" href="https://www.amazon.in/s?k=${encodeURIComponent(item.query)}&tag=${AMAZON_TAG}" target="_blank" rel="nofollow noopener">Amazon 🛒</a>
+      <a class="s-btn flp" href="https://www.flipkart.com/search?q=${encodeURIComponent(item.query)}" target="_blank" rel="nofollow noopener">Flipkart 🛍️</a>
+    </div>
+  </div>`).join("");
 }
 
 async function generateScript() {
@@ -262,6 +269,7 @@ document.getElementById("closeModal").addEventListener("click", () => {
   document.getElementById("infoModal").style.display = "none";
 });
 
+document.getElementById("topic").addEventListener("input", e => updateStore(e.target.value));
 updateStore("");
 </script>
 </body>
