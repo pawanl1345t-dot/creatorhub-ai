@@ -176,7 +176,7 @@ function updateStore(topicText) {
     document.getElementById("prodGrid").innerHTML = pack.items.map(item => `<div class="prod">
       <div><h3>${item.title}</h3><p>${item.desc}</p></div>
       <div class="shop-btns">
-        <a class="s-btn amz" href="https://www.amazon.in/s?k=${encodeURIComponent(item.query)}&tag=${AMAZON_TAG}" target="_blank" rel="nofollow noopener">Amazon 🛒</a>
+        <a class="s-btn amz" href="https://www.amazon.in/s?k=${encodeURIComponent(item.query)}&tag=creatorhubai-21" target="_blank" rel="nofollow noopener">Amazon 🛒</a>
         <a class="s-btn flp" href="https://www.flipkart.com/search?q=${encodeURIComponent(item.query)}" target="_blank" rel="nofollow noopener">Flipkart 🛍️</a>
       </div>
     </div>`).join("");
@@ -191,7 +191,7 @@ function updateStore(topicText) {
   document.getElementById("prodGrid").innerHTML = items.map(item => `<div class="prod">
     <div><h3>${item.title}</h3><p>${item.desc}</p></div>
     <div class="shop-btns">
-      <a class="s-btn amz" href="https://www.amazon.in/s?k=${encodeURIComponent(item.query)}&tag=${AMAZON_TAG}" target="_blank" rel="nofollow noopener">Amazon 🛒</a>
+      <a class="s-btn amz" href="https://www.amazon.in/s?k=${encodeURIComponent(item.query)}&tag=creatorhubai-21" target="_blank" rel="nofollow noopener">Amazon 🛒</a>
       <a class="s-btn flp" href="https://www.flipkart.com/search?q=${encodeURIComponent(item.query)}" target="_blank" rel="nofollow noopener">Flipkart 🛍️</a>
     </div>
   </div>`).join("");
